@@ -1,6 +1,6 @@
 /**
-* Template Name: Arsha
-* Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+*  Name: Tich Technologies
+*  URL: https://bootstrapmade.com/Tich Technologies-free-bootstrap-html--corporate/
 * Updated: Feb 22 2025 with Bootstrap v5.3.3
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
@@ -1069,7 +1069,7 @@ section,
 
 .why-us .faq-container .faq-item .faq-content {
   display: grid;
-  grid-template-rows: 0fr;
+  grid--rows: 0fr;
   transition: 0.3s ease-in-out;
   visibility: hidden;
   opacity: 0;
@@ -1109,7 +1109,7 @@ section,
 }
 
 .why-us .faq-container .faq-active .faq-content {
-  grid-template-rows: 1fr;
+  grid--rows: 1fr;
   visibility: visible;
   opacity: 1;
   padding-top: 10px;
@@ -1918,7 +1918,7 @@ section,
 
 .faq-2 .faq-container .faq-item .faq-content {
   display: grid;
-  grid-template-rows: 0fr;
+  grid--rows: 0fr;
   transition: 0.3s ease-in-out;
   visibility: hidden;
   opacity: 0;
@@ -1958,7 +1958,7 @@ section,
 }
 
 .faq-2 .faq-container .faq-active .faq-content {
-  grid-template-rows: 1fr;
+  grid--rows: 1fr;
   visibility: visible;
   opacity: 1;
   padding-top: 10px;

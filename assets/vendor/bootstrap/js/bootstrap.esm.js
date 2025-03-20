@@ -3002,7 +3002,7 @@ function sanitizeHtml(unsafeHtml, allowList, sanitizeFunction) {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap util/template-factory.js
+ * Bootstrap util/-factory.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -3012,7 +3012,7 @@ function sanitizeHtml(unsafeHtml, allowList, sanitizeFunction) {
  * Constants
  */
 
-const NAME$5 = 'TemplateFactory';
+const NAME$5 = 'Factory';
 const Default$4 = {
   allowList: DefaultAllowlist,
   content: {},
@@ -3021,7 +3021,7 @@ const Default$4 = {
   html: false,
   sanitize: true,
   sanitizeFn: null,
-  template: '<div></div>'
+  : '<div></div>'
 };
 const DefaultType$4 = {
   allowList: 'object',
@@ -3030,7 +3030,7 @@ const DefaultType$4 = {
   html: 'boolean',
   sanitize: 'boolean',
   sanitizeFn: '(null|function)',
-  template: 'string'
+  : 'string'
 };
 const DefaultContentType = {
   entry: '(string|element|function|null)',
@@ -3041,7 +3041,7 @@ const DefaultContentType = {
  * Class definition
  */
 
-class TemplateFactory extends Config {
+class Factory extends Config {
   constructor(config) {
     super();
     this._config = this._getConfig(config);
@@ -3074,17 +3074,17 @@ class TemplateFactory extends Config {
     return this;
   }
   toHtml() {
-    const templateWrapper = document.createElement('div');
-    templateWrapper.innerHTML = this._maybeSanitize(this._config.template);
+    const Wrapper = document.createElement('div');
+    Wrapper.innerHTML = this._maybeSanitize(this._config.);
     for (const [selector, text] of Object.entries(this._config.content)) {
-      this._setContent(templateWrapper, text, selector);
+      this._setContent(Wrapper, text, selector);
     }
-    const template = templateWrapper.children[0];
+    const  = Wrapper.children[0];
     const extraClass = this._resolvePossibleFunction(this._config.extraClass);
     if (extraClass) {
-      template.classList.add(...extraClass.split(' '));
+      .classList.add(...extraClass.split(' '));
     }
-    return template;
+    return ;
   }
 
   // Private
@@ -3100,25 +3100,25 @@ class TemplateFactory extends Config {
       }, DefaultContentType);
     }
   }
-  _setContent(template, content, selector) {
-    const templateElement = SelectorEngine.findOne(selector, template);
-    if (!templateElement) {
+  _setContent(, content, selector) {
+    const Element = SelectorEngine.findOne(selector, );
+    if (!Element) {
       return;
     }
     content = this._resolvePossibleFunction(content);
     if (!content) {
-      templateElement.remove();
+      Element.remove();
       return;
     }
     if (isElement(content)) {
-      this._putElementInTemplate(getElement(content), templateElement);
+      this._putElementIn(getElement(content), Element);
       return;
     }
     if (this._config.html) {
-      templateElement.innerHTML = this._maybeSanitize(content);
+      Element.innerHTML = this._maybeSanitize(content);
       return;
     }
-    templateElement.textContent = content;
+    Element.textContent = content;
   }
   _maybeSanitize(arg) {
     return this._config.sanitize ? sanitizeHtml(arg, this._config.allowList, this._config.sanitizeFn) : arg;
@@ -3126,13 +3126,13 @@ class TemplateFactory extends Config {
   _resolvePossibleFunction(arg) {
     return execute(arg, [this]);
   }
-  _putElementInTemplate(element, templateElement) {
+  _putElementIn(element, Element) {
     if (this._config.html) {
-      templateElement.innerHTML = '';
-      templateElement.append(element);
+      Element.innerHTML = '';
+      Element.append(element);
       return;
     }
-    templateElement.textContent = element.textContent;
+    Element.textContent = element.textContent;
   }
 }
 
@@ -3192,7 +3192,7 @@ const Default$3 = {
   sanitize: true,
   sanitizeFn: null,
   selector: false,
-  template: '<div class="tooltip" role="tooltip">' + '<div class="tooltip-arrow"></div>' + '<div class="tooltip-inner"></div>' + '</div>',
+  : '<div class="tooltip" role="tooltip">' + '<div class="tooltip-arrow"></div>' + '<div class="tooltip-inner"></div>' + '</div>',
   title: '',
   trigger: 'hover focus'
 };
@@ -3211,7 +3211,7 @@ const DefaultType$3 = {
   sanitize: 'boolean',
   sanitizeFn: '(null|function)',
   selector: '(string|boolean)',
-  template: 'string',
+  : 'string',
   title: '(string|element|function)',
   trigger: 'string'
 };
@@ -3233,7 +3233,7 @@ class Tooltip extends BaseComponent {
     this._isHovered = null;
     this._activeTrigger = {};
     this._popper = null;
-    this._templateFactory = null;
+    this._Factory = null;
     this._newContent = null;
 
     // Protected
@@ -3378,12 +3378,12 @@ class Tooltip extends BaseComponent {
   }
   _getTipElement() {
     if (!this.tip) {
-      this.tip = this._createTipElement(this._newContent || this._getContentForTemplate());
+      this.tip = this._createTipElement(this._newContent || this._getContentFor());
     }
     return this.tip;
   }
   _createTipElement(content) {
-    const tip = this._getTemplateFactory(content).toHtml();
+    const tip = this._getFactory(content).toHtml();
 
     // TODO: remove this check in v6
     if (!tip) {
@@ -3406,11 +3406,11 @@ class Tooltip extends BaseComponent {
       this.show();
     }
   }
-  _getTemplateFactory(content) {
-    if (this._templateFactory) {
-      this._templateFactory.changeContent(content);
+  _getFactory(content) {
+    if (this._Factory) {
+      this._Factory.changeContent(content);
     } else {
-      this._templateFactory = new TemplateFactory({
+      this._Factory = new Factory({
         ...this._config,
         // the `content` var has to be after `this._config`
         // to override config.content in case of popover
@@ -3418,9 +3418,9 @@ class Tooltip extends BaseComponent {
         extraClass: this._resolvePossibleFunction(this._config.customClass)
       });
     }
-    return this._templateFactory;
+    return this._Factory;
   }
-  _getContentForTemplate() {
+  _getContentFor() {
     return {
       [SELECTOR_TOOLTIP_INNER]: this._getTitle()
     };
@@ -3668,7 +3668,7 @@ const Default$2 = {
   content: '',
   offset: [0, 8],
   placement: 'right',
-  template: '<div class="popover" role="tooltip">' + '<div class="popover-arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div>' + '</div>',
+  : '<div class="popover" role="tooltip">' + '<div class="popover-arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div>' + '</div>',
   trigger: 'click'
 };
 const DefaultType$2 = {
@@ -3698,7 +3698,7 @@ class Popover extends Tooltip {
   }
 
   // Private
-  _getContentForTemplate() {
+  _getContentFor() {
     return {
       [SELECTOR_TITLE]: this._getTitle(),
       [SELECTOR_CONTENT]: this._getContent()

@@ -1,6 +1,6 @@
-Thanks for downloading this template!
+Thanks for downloading this !
 
-Template Name: Arsha
-Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+ Name: Tich Technologies
+ URL: https://bootstrapmade.com/Tich Technologies-free-bootstrap-html--corporate/
 Author: BootstrapMade.com
 License: https://bootstrapmade.com/license/
