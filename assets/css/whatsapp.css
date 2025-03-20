@@ -40,7 +40,7 @@
 
 .whatsappTextBox {
   width: 320px;
-  height: 280px;
+  height: 300px;
   background-color: #1e1e1e;
   position: absolute;
   top: -280px;
@@ -144,7 +144,7 @@
 @media (max-width: 700px) {
   .whatsappTextBox {
     width: 280px;
-    height: 260px;
+    height: 300px;
     top: -280px;
     left: 10px;
     border-radius: 8px;
