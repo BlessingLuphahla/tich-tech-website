@@ -1,6 +1,6 @@
 /**
-*  Name: Tich Technologies
-*  URL: https://bootstrapmade.com/Tich Technologies-free-bootstrap-html--corporate/
+*  Name: Tich D Technologies LTD
+*  URL: https://bootstrapmade.com/Tich D Technologies LTD-free-bootstrap-html--corporate/
 * Updated: Feb 22 2025 with Bootstrap v5.3.3
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
