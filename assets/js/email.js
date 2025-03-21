@@ -4,8 +4,11 @@ const submitButton = document.querySelector(
   ".php-email-form button[type=submit]"
 );
 
+// const link = "https://express-email-processor.onrender.com/tich"
+const link = "http://localhost:5665/tich"
+
 const postData = async (data) => {
-  var res = await fetch("https://express-email-processor.onrender.com/tich", {
+  var res = await fetch(link, {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
