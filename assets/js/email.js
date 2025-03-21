@@ -5,7 +5,7 @@ const submitButton = document.querySelector(
 );
 
 const postData = async (data) => {
-  var res = await fetch("https://express-email-processor/tich", {
+  var res = await fetch("https://express-email-processor.onrender.com/tich", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
