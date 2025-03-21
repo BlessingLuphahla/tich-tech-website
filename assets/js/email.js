@@ -4,8 +4,8 @@ const submitButton = document.querySelector(
   ".php-email-form button[type=submit]"
 );
 
-// const link = "https://express-email-processor.onrender.com/tich"
-const link = "http://localhost:5665/tich"
+const link = "https://express-email-processor.onrender.com/tich";
+// const link = "http://localhost:5665/tich"
 
 const postData = async (data) => {
   var res = await fetch(link, {
@@ -45,6 +45,17 @@ submitButton.addEventListener("click", async (e) => {
   }
 
   const data = { name, email, subject, message };
+  submitButton.textContent = "Loading...";
+  submitButton.style.cursor = "not-allowed";
+
   const res = await postData(data);
-  alert(res);
+  submitButton.textContent = "Send Message";
+  submitButton.style.cursor = "pointer";
+  alert(res.message);
+  if (res.status === 200) {
+    form[0].value = "";
+    form[1].value = "";
+    form[2].value = "";
+    form[3].value = "";
+  }
 });
