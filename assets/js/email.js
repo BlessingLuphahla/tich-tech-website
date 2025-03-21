@@ -34,6 +34,13 @@ submitButton.addEventListener("click", async (e) => {
     return;
   }
 
+  const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  if (!isEmailValid) {
+    alert("Email is invalid!");
+    return;
+  }
+
   const data = { name, email, subject, message };
   const res = await postData(data);
   alert(res);
