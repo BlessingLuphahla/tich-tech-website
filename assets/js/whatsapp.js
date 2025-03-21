@@ -21,6 +21,9 @@ whatsappIcon.addEventListener("click", () => {
   if (isBoxClosed) {
     whatsappTextBox.style.display = "block";
     isBoxClosed = false;
+  } else {
+    whatsappTextBox.style.display = "none";
+    isBoxClosed = true;
   }
 });
 
