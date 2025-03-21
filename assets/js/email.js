@@ -47,7 +47,6 @@ submitButton.addEventListener("click", async (e) => {
   const data = { name, email, subject, message };
   submitButton.textContent = "Loading...";
   submitButton.style.cursor = "not-allowed";
-
   const res = await postData(data);
   submitButton.textContent = "Send Message";
   submitButton.style.cursor = "pointer";
