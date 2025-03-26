@@ -17,8 +17,70 @@
   font-size: 20px;
 }
 
+.mainIntroText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.mainIntroText p {
+  font-size: 15px;
+}
+
+.mainIntroText h1 {
+  font-size: 25px;
+}
+
+.col-lg-12.content {
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: center;
+}
+
+.col-lg-12.content p {
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.col-lg-12.content h4 {
+  margin: 10px;
+  font-size: 20px;
+}
+
+.col-lg-12.content ul {
+  font-size: 18px;
+}
+
+.col-lg-12.content ul > li {
+  font-size: 14px;
+}
+
+.container.section-title h2 {
+  font-size: 25px;
+  margin: 0;
+  padding: 0;
+}
+
 @media (max-width: 700px) {
   #sitename {
     font-size: 10px;
+  }
+  .mainIntroText p {
+    font-size: 12px;
+  }
+
+  .mainIntroText h1 {
+    font-size: 22px;
+  }
+
+  .col-lg-12.content p {
+    font-size: 14px;
+  }
+
+  .container.section-title h2 {
+    font-size: 22px;
   }
 }
