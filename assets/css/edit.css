@@ -88,9 +88,9 @@ section#about.about.section .industry-served {
 
 @media (max-width: 700px) {
   #sitename {
-    font-size: 12px;
+    font-size: 14px;
     text-wrap: wrap;
-    width: 55%;
+    width: 100%;
   }
 
   .btn-getstarted {
