@@ -82,10 +82,22 @@ section#about.about.section .industry-served {
   font-weight: bold;
 }
 
+.logo.d-flex.align-items-center.me-auto img {
+  width: 52px !important;
+}
+
 @media (max-width: 700px) {
   #sitename {
-    font-size: 10px;
+    font-size: 12px;
+    text-wrap: wrap;
+    width: 55%;
   }
+
+  .btn-getstarted {
+    width: 130px !important;
+    padding: 10px !important;
+  }
+
   .mainIntroText p {
     font-size: 12px;
   }
