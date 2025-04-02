@@ -14,7 +14,12 @@
 }
 
 #sitename {
-  font-size: 20px;
+  font-size: 25px;
+}
+
+#header > div > a > img {
+  width: 90px !important;
+  height: 80px !important;
 }
 
 .mainIntroText {
@@ -84,6 +89,7 @@ section#about.about.section .industry-served {
 
 .logo.d-flex.align-items-center.me-auto img {
   width: 52px !important;
+  height: max-content !important;
 }
 
 #about .about-img {
