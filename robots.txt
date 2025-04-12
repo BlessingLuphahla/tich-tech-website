@@ -1,0 +1,3 @@
+user-agent:*
+Allow: /
+Sitemap: https://luxovatedigital.vercel.app/sitemap1.xml
